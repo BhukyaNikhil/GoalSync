@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+  color-scheme: dark;
+  font-family: 'Inter', sans-serif;
+  background: #020617;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+  transition: background 0.35s ease, color 0.35s ease;
+}
+
+body.dark {
+  background: #020617;
+  color: #e2e8f0;
+}
+
+body.light {
+  background: #f8fafc;
+  color: #0f172a;
+}
+
+body.light .glass-card {
+  border-color: rgba(15, 23, 42, 0.12);
+  background: rgba(255, 255, 255, 0.78);
+}
+
+body.light .glass-card h3,
+body.light .glass-card p,
+body.light .glass-card span,
+body.light .glass-card input,
+body.light .glass-card textarea,
+body.light .glass-card select {
+  color: #0f172a;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: rgba(56,189,248,0.35);
+  color: #fff;
+}
+
+.glass-card {
+  @apply relative overflow-hidden rounded-[32px] border border-white/10 bg-white/5 shadow-glass backdrop-blur-xl transition duration-300;
+}
+
+.tooltip-card {
+  @apply rounded-[28px] border border-white/10 bg-slate-950/90 px-4 py-3 text-sm text-white shadow-[0_30px_80px_-20px_rgba(15,23,42,0.45)] backdrop-blur-2xl;
+}
+
+.button-glow {
+  @apply transition duration-300 ease-out hover:-translate-y-0.5 hover:shadow-[0_20px_80px_-30px_rgba(59,130,246,0.55)];
+}
+
+.gradient-glow {
+  background: linear-gradient(135deg, rgba(59,130,246,0.4), rgba(236,72,153,0.35));
+}
